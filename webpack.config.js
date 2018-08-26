@@ -6,17 +6,21 @@ let rules = require('./webpack.config.rules')();
 let path = require('path');
 
 rules.push({
-    test: /\.css$/,
+    test: /\.scss$/,
     use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: 'css-loader'
+        use: [{
+            loader: 'css-loader'
+        }, {
+            loader: 'sass-loader'
+        }],
+        fallback: 'style-loader'
     })
 });
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/js/index.js',
     output: {
-        filename: '[name].[hash].js',
+        filename: '[name].js',
         path: path.resolve('dist')
     },
     devtool: 'source-map',
@@ -32,7 +36,7 @@ module.exports = {
         new ExtractTextPlugin('styles.css'),
         new HtmlPlugin({
             title: 'Другофильтр',
-            template: 'index.hbs'
+            template: './src/template/index.hbs'
         }),
         new CleanWebpackPlugin(['dist'])
     ]

@@ -1,7 +1,9 @@
 import '../scss/main.scss';
+import userTemplate from '../template/user.hbs';
 
-const auth = require('./modules/vk.auth.js');
 const api = require('./modules/vk.api.js');
+const auth = require('./modules/vk.auth.js');
+const renderHtml = require('./modules/render.html.js');
 
 let friendsObj;
 
@@ -15,7 +17,12 @@ window.addEventListener('load', () => {
         })
         .then((data) => {
             const [user] = data;
-            console.log(data);
+            renderHtml(user, '#user', userTemplate);
+
+            return api('users.get', {
+                v: 5.68,
+                fields: 'first_name, last_name, photo_100'
+            });
         })
         .catch(function(e) {
             alert('Ошибка: ' + e.message);

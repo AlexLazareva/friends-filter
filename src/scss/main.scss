@@ -1,5 +1,94 @@
 @import "variables";
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,500&amp;subset=cyrillic-ext');
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: .5px;
+  background: #999999;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  transition: .3s all ease-in-out;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.title {
+  font-family: $font;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #996d53;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $accent;
+  padding: 13px 15px;
+
+  &__title {
+    color: #fff;
+  }
+}
 
 .main {
   background-color: $primary;
+  height: 100%;
 }

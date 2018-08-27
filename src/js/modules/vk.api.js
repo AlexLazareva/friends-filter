@@ -1,4 +1,4 @@
-module.exports = (params, method) => {
+module.exports = (method, params) => {
     return new Promise((resolve, reject) => {
         VK.api(method, params, data => {
             if (data.error) {

@@ -89,9 +89,56 @@ h6 {
   }
 }
 
-.friends-list {
+.lists-friends {
   height: 85%;
   display: flex;
+
+  &__left {
+    width: 50%;
+    border-right: 2px solid $primary;
+  }
+
+  &__right {
+    width: 50%;
+  }
+}
+
+.search {
+  padding: 13px 15px;
+}
+
+.form {
+  &__search {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 18px 10px 40px;
+  }
+
+  &__btn {
+    position: absolute;
+    border: none;
+    outline: none;
+    z-index: 10;
+  }
+}
+
+.friends {
+  background-color: #fff;
+
+  &__title {
+    font-family: $font;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 15px 15px 9px;
+    color: $dark;
+  }
+
+  &__list {
+    border-top: 2px solid $primary;
+  }
 }
 
 .footer {
@@ -108,4 +155,5 @@ h6 {
   font-family: $font;
   font-weight: 300;
   color: #fff;
+  outline: none;
 }

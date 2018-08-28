@@ -35,4 +35,11 @@ window.addEventListener('load', () => {
         });
 });
 
+const save = document.querySelector('#save');
+
+save.addEventListener('click', () => {
+    localStorage.myFriends = JSON.stringify(friendsObj);
+    alert('Сохранено!');
+});
+
 export { friendsObj };

@@ -1,12 +1,12 @@
 const validateData = (data, friendsObj) => {
-    let listSecondFriend = friendsObj.secondList.items;
-    let firstListFriends = [];
-    let secondListFriends = [];
+    let listSecondFriend = friendsObj.secondList.items,
+        firstListFriends = [],
+        secondListFriends = [];
 
     outer: for (let i = 0, length = data.length; i < length; i++) {
         let friendId = data[i].id;
 
-        for (let j = 0; j < listSecondFriend; i++) {
+        for (let j = 0; j < listSecondFriend.length; j++) {
             let listFriendId = listSecondFriend[j].id;
 
             if (listFriendId == friendId) {
@@ -14,12 +14,11 @@ const validateData = (data, friendsObj) => {
                 continue outer;
             }
         }
-
         firstListFriends.push(data[i]);
     }
 
-    friendsObj.firstListFriends = firstListFriends;
-    friendsObj.secondtListFriends = secondListFriends;
+    friendsObj.firstList.items = firstListFriends;
+    friendsObj.secondList.items = secondListFriends;
 
     return friendsObj;
 };

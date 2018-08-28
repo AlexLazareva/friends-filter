@@ -24,6 +24,10 @@ window.addEventListener('load', () => {
                 fields: 'first_name, last_name, photo_100'
             });
         })
+        .then(data => {
+            friendsObj = require('./modules/get.user.data.js')(data);
+            console.log(friendsObj);
+        })
         .catch(function(e) {
             alert('Ошибка: ' + e.message);
         });

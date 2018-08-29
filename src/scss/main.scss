@@ -103,6 +103,10 @@ h6 {
 
   &__right {
     width: 50%;
+
+    .add-btn {
+      transform: rotate(45deg);
+    }
   }
 }
 

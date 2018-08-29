@@ -55,11 +55,13 @@ h6 {
 }
 
 .wrapper {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   height: 100%;
+  overflow: hidden;
   margin: 0 auto;
   border-radius: 10px;
   background-color: $primary;
@@ -90,13 +92,13 @@ h6 {
 }
 
 .lists-friends {
-  height: 81%;
+  height: 85%;
   display: flex;
   overflow: hidden;
 
   &__left {
     width: 50%;
-    border-right: 2px solid $primary;
+    border-right: $line;
   }
 
   &__right {
@@ -133,7 +135,7 @@ h6 {
   &__photo {
     width: 60px;
     height: 60px;
-    border-radius: 100%;
+    border-radius: 50%;
     overflow: hidden;
   }
 
@@ -156,15 +158,25 @@ h6 {
     font-size: 18px;
     padding: 15px 15px 9px;
     color: $dark;
+    border-bottom: $line;
   }
 
   &__block {
     height: 100%;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+      background-color: rgba($dark, .6);
+    }
   }
 
   &__list {
-    border-top: 2px solid $primary;
     padding: 0 15px;
   }
 }
@@ -172,26 +184,36 @@ h6 {
 .friend {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   padding: 9px 6px;
-  border-bottom: 2px solid $primary;
+  border-bottom: $line;
 
   &:hover {
     background-color: $primary;
   }
 
   &__photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     overflow: hidden;
   }
 
   &__name {
-    width: 73%;
+    width: 75%;
     font-family: $font;
     color: $dark;
     font-size: 16px;
     padding: 10px 15px;
+  }
+
+  .add-btn {
+    width: 40px;
+    height: 40px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAENSURBVGhD7dk9agJhFIXhiWA6S7MBwRVkA2lS+bOOYJvKVCnsQwiCpbijQCzMAoKNCAlEmyTvxWYIF5wRdO4n54UHLIaPOTAgo5lSqvIauNh9TLMbzPGLNYZIblALX7AReQMk1QP+jzCvSKoxvCH2iCWVhkRLQ6KlIdHSkGhpSLQ05Bi1McLkAG/whmzhXb/PMzoo3S2+4d1MlWxQqd7hHRTBNQrVhHdAFHcoVB2f8A6JoI/CPcI7pGr2qnyJwtVwjwVWB9jAu5EfeNfv84Ep7LE/afpCjJaGREtDoqUh0dKQaGlItM5myBO8IUskVRfekBmS6wX5EfZSdIUksx8K7J/cHkq92SmllFOW/QFe+8Vw40NiEwAAAABJRU5ErkJggg==") center center no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    outline: none;
   }
 }
 

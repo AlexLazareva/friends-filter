@@ -5,6 +5,7 @@ import itemTemplate from '../template/item.hbs';
 const api = require('./modules/vk.api.js');
 const auth = require('./modules/vk.auth.js');
 const renderHtml = require('./modules/render.html.js');
+const dragAndDrop = require('./modules/drag.and.drop.js')();
 
 let friendsObj;
 
@@ -36,6 +37,8 @@ window.addEventListener('load', () => {
 });
 
 const save = document.querySelector('#save');
+
+dragAndDrop.setSelector('#friends__list_0');
 
 save.addEventListener('click', () => {
     localStorage.myFriends = JSON.stringify(friendsObj);

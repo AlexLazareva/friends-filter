@@ -1,4 +1,4 @@
-import { appendData} from './append.data.js';
+import { appendData } from './append.data.js';
 
 module.exports = () => {
     let list;
@@ -22,12 +22,12 @@ module.exports = () => {
 
             dragObj.item.style.position = 'absolute';
             dragObj.item.style.zIndex = 999;
-            dragObj.item.style.top = event.pageY - dragObj.offsetHeight / 2 + 'px';
-            dragObj.item.style.left = event.pageX - dragObj.offsetWidth / 2 + 'px';
+            dragObj.item.style.top = event.pageY - dragObj.item.offsetHeight / 2 + 'px';
+            dragObj.item.style.left = event.pageX - dragObj.item.offsetWidth / 2 + 'px';
         },
         handlerMouseUp: event => {
-            let elem;
-            let list;
+            let elem,
+                list;
 
             if (!dragObj.item) return;
 

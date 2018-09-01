@@ -7,6 +7,7 @@ const auth = require('./modules/vk.auth.js');
 const renderHtml = require('./modules/render.html.js');
 const eventButton = require('./modules/event.button')();
 const dragAndDrop = require('./modules/drag.and.drop.js')();
+const friendsFilter = require('./modules/filter.friends.js')();
 
 let friendsObj;
 
@@ -20,6 +21,7 @@ window.addEventListener('load', () => {
         })
         .then(data => {
             const [user] = data;
+
             renderHtml(user, '#user', userTemplate);
 
             return api('friends.get', {

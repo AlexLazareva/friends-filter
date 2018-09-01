@@ -34,7 +34,7 @@ module.exports = () => {
             dragObj.item.hidden = true;
             elem = document.elementFromPoint(event.clientX, event.clientY);
             dragObj.item.hidden = false;
-            list = elem.closest('#friends__list_1');
+            list = elem.firstElementChild;
 
             if (list) {
                 dragObj.item.rollback();

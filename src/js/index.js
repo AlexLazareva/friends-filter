@@ -5,6 +5,7 @@ import itemTemplate from '../template/item.hbs';
 const api = require('./modules/vk.api.js');
 const auth = require('./modules/vk.auth.js');
 const renderHtml = require('./modules/render.html.js');
+const eventButton = require('./modules/event.button')();
 const dragAndDrop = require('./modules/drag.and.drop.js')();
 
 let friendsObj;
@@ -17,7 +18,7 @@ window.addEventListener('load', () => {
                 fields: 'first_name, last_name, photo_100'
             });
         })
-        .then((data) => {
+        .then(data => {
             const [user] = data;
             renderHtml(user, '#user', userTemplate);
 
@@ -31,13 +32,14 @@ window.addEventListener('load', () => {
             renderHtml(friendsObj.firstList, '#friends__list_0', itemTemplate);
             renderHtml(friendsObj.secondList, '#friends__list_1', itemTemplate);
         })
-        .catch(function(e) {
+        .catch(e => {
             alert('Ошибка: ' + e.message);
         });
 });
 
 const save = document.querySelector('#save');
 
+eventButton.setSelector('.lists-friends');
 dragAndDrop.setSelector('#friends__list_0');
 
 save.addEventListener('click', () => {

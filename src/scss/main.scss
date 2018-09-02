@@ -121,12 +121,21 @@ h6 {
     border-radius: 15px;
     border: none;
     padding: 10px 18px 10px 40px;
+    outline: none;
   }
 
   &__btn {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    background-color: transparent;
     border: none;
     outline: none;
     z-index: 10;
+
+    svg {
+      fill: #9f9f9f;
+    }
   }
 }
 
